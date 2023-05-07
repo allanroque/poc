@@ -1,6 +1,6 @@
 ---
 - name: Export all assets
-  hosts: hyper01.aroque.com.br
+  hosts: localhost
   gather_facts: False
   tasks:
   - name: Export all assets
