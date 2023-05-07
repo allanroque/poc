@@ -1,0 +1,14 @@
+---
+- name: Export all assets
+  hosts: hyper01.aroque.com.br
+  gather_facts: False
+  tasks:
+  - name: Export all assets
+    export:
+      all: True
+    register: test
+
+  - name: debug
+    debug:
+      var: test
+
