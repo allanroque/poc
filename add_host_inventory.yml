@@ -7,7 +7,7 @@
   - name: Add host
     ansible.controller.host:
       name: "{{ ansible_hosts }}"
-      description: "{{ adicionado para self-healing }}"
+      description: "adicionado para self-healing"
       inventory: inventory_selfhealing
       state: present
       variables:
