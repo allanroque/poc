@@ -38,3 +38,12 @@
 
     - debug:
         msg: "Valor de Myhost1: {{ message.split(',')[0] }}"
+
+
+    - name: debug test!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+      debug:
+        var: host_name
+      vars:
+        host_name: "{{ message | from_json | json_query(query) | first | replace('\"', '') }}"
+        query: "?type=='HOST'.name"
+
