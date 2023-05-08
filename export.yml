@@ -4,7 +4,7 @@
   gather_facts: False
   tasks:
   - name: Export all assets
-    awx.awx.export:
+    ansible.controller.export:
       all: True
     register: test
 
