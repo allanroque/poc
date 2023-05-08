@@ -42,7 +42,7 @@
 
     - name: Extrair nome do host
       set_fact:
-        host_name: "{{ message | json_query('[?type==`HOST`].name') | first }}"
+        host_name: "{{ message | from_json | json_query('[?type==`HOST`].name') | first }}"
 
     - name: debug test!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
       debug:
