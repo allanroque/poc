@@ -4,6 +4,10 @@
   gather_facts: False
   tasks:
 
+  - name: Extrair nome do host
+    set_fact:
+      host_name: "{{ message | from_json | json_query('[?type==`HOST`].name') | first }}"
+
   - name: Add host
     ansible.controller.host:
       name: "{{ host_name }}"
@@ -12,3 +16,7 @@
       state: present
       variables:
         ansible_host: 3.142.164.22
+
+  - set_stats:
+    data:
+      host_name: "{{ host_name }}" 
