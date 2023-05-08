@@ -1,6 +1,8 @@
 ---
 - name: install the iis web service
   hosts: windows
+  vars:
+    content: "Test de Automação"
 
   tasks:
     - name: install iis
