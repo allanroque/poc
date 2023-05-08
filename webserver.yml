@@ -40,10 +40,11 @@
         msg: "Valor de Myhost1: {{ message.split(',')[0] }}"
 
 
+    - name: Extrair nome do host
+      set_fact:
+        host_name: "{{ message | json_query('[?type==`HOST`].name') | first }}"
+
     - name: debug test!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
       debug:
-        var: host_name
-      vars:
-        host_name: "{{ message | from_json | json_query(query) | first | replace('\"', '') }}"
-        query: "?type=='HOST'.name"
+        var: host_name:
 
