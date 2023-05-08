@@ -6,7 +6,7 @@
 
   - name: Remover host
     ansible.controller.host:
-      name: "{{ ansible_hosts }}"
+      name: "{{ host_name }}"
       description: "adicionado para self-healing"
       inventory: inventory_selfhealing
       state: absent

@@ -1,0 +1,10 @@
+---
+- name: facts do windows
+  hosts: windows
+  tasks:
+    - name: Gather Ansible Facts About Host
+      setup:
+        gather_subset:
+          - all
+    - debug: 
+        msg: "{{ ansible_facts }}"
