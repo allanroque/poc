@@ -1,0 +1,22 @@
+---
+- name: Adicionar host em um inventario de self-healing
+  hosts: localhost
+  gather_facts: False
+  vars:
+    host_name: test.acme.com
+  tasks:
+
+  - name: Add host
+    ansible.controller.host:
+      name: "{{ host_name }}"
+      description: "adicionado para self-healing"
+      inventory: inventory_selfhealing
+      state: present
+      variables:
+
+  - set_stats:
+    data:
+      host_name: "{{ host_name }}"
+~                                                                                                                                                                                                                                             
+~                                                                                                                                                                                                                                             
+~                                       
