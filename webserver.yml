@@ -30,4 +30,9 @@
 
     - name: debug
       debug:
-        var: nome_do_host
+        var: nome_do_host 
+
+    - name: debug
+      debug:
+        var: message
+
