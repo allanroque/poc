@@ -23,3 +23,11 @@
     - name: Show website address
       debug:
         msg: http://{{ ansible_host }}
+
+    - name: Extrair nome do host
+      set_fact:
+        nome_do_host: "{{ output.message | json_query(\"[0].name\") }}"
+
+    - name: debug
+      debug:
+        var: nome_do_host
