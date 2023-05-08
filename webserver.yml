@@ -26,7 +26,7 @@
 
     - name: Extrair nome do host
       set_fact:
-        nome_do_host: "{{ output.message | json_query(\"[0].name\") }}"
+        nome_do_host: "{{ message | json_query(\"[0].name\") }}"
 
     - name: debug
       debug:
@@ -36,3 +36,5 @@
       debug:
         var: message
 
+    - debug:
+        msg: "Valor de Myhost1: {{ message.split(',')[0] }}"
