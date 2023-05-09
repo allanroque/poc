@@ -11,6 +11,7 @@
       execution_environments: 'poc-ee'
       projects: 'poc'
     register: export_output  
+    delegate_to: localhost
 
   - name: Save export to file
     copy:
