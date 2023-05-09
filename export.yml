@@ -1,6 +1,7 @@
 ---
 - name: Playbook to export templates
   hosts: student1-ansible-1
+  become: yes
 
   tasks:
 
