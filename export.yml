@@ -5,7 +5,7 @@
   tasks:
 
   - name: Export all information
-    awx.awx.export:
+    ansible.controller.export:
       job_templates: 'all'
       credentials: 'AAP'
       execution_environments: 'poc-ee'
