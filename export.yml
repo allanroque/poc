@@ -1,0 +1,18 @@
+---
+- name: Playbook to export templates
+  hosts: student1-ansible-1
+
+  tasks:
+
+  - name: Export all information
+    awx.awx.export:
+      job_templates: 'all'
+      credentials: 'AAP'
+      execution_environments: 'poc-ee'
+      projects: 'poc'
+    register: export_output  
+
+  - name: Save export to file
+    copy:
+      content: "{{ export_output['assets'] }}"
+      dest: /home/student/export/export.json

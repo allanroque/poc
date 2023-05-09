@@ -10,7 +10,7 @@
     ansible.controller.host:
       name: "{{ host_name }}"
       description: "adicionado para self-healing"
-      inventory: inventory_selfhealing
+      inventory: temp_inv-001
       state: present
       variables:
 
